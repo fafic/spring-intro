@@ -2,7 +2,9 @@ package br.edu.fafic.ppi.ex.spring.exemplo_spring.domain;
 
 import lombok.*;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.UUID;
 
 @Entity
@@ -11,17 +13,11 @@ import java.util.UUID;
 @Data
 @Builder
 @ToString
-public class Pessoa {
+public class Contato {
 
     @Id
     @GeneratedValue
     private UUID id;
-    private String nome;
-    private String cpf;
-
-    @Embedded
-    private Endereco endereco;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    private Contato contato;
+    private String email;
+    private String telefone;
 }
